@@ -20,7 +20,7 @@ export default class Weather extends Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition((position) => {
     
       cords.lat = position.coords.latitude; 
       cords.lon = position.coords.longitude;
