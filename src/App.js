@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
+import React, {} from 'react';
 import './App.css';
-import TimeComponent from './Components/Time.js';
-import WeatherComponent from './Components/Weather.js';
+import TimeComponent from './Components/Time/Time.js';
+import WeatherComponent from './Components/Weather/Weather.js';
 
 
 
 const App = () => {
   return (
     <div>
-    <h1>Hello</h1>
       <TimeComponent />
       <WeatherComponent />
     </div>

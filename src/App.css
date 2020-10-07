@@ -1,0 +1,18 @@
+.dark-mode {
+  filter: invert(100%);
+  background-color: #e1e2e2;
+}
+
+.yellow-mode {
+  transition-duration: 0.5s;
+  background-color: yellow;
+}
+:root {
+  transition-duration: 0.5s;
+}
+
+
+*{
+
+  margin: 0;
+}

@@ -1,0 +1,59 @@
+.rain-video {
+    z-index: -1;
+    position: relative;
+}
+
+.time {
+  position: relative;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 200px;
+  font-weight: 100 ;
+  left: 200px;
+  top: 200px;
+  width: 200px;
+}
+
+.borders {
+  position: relative;
+  width: 20%;
+}
+
+.border-nmb1 {
+  border-left: black solid 1px;
+  position: relative;
+  height: 100px;
+  left: 200px;
+}
+
+.border-nmb2 {
+  position: relative;
+  border-left: black solid 1px;
+  height: 100px;
+
+  left: 180px;
+}
+
+.border-nmb3 {
+  position: relative;
+  border-left: black solid 1px;
+  height: 100px;
+
+  left: 160px;
+}
+
+.border-nmb4 {
+  position: relative;
+  border-left: black solid 1px;
+  height: 100px;
+
+  left: 140px;
+}
+
+.border-nmb5 {
+  position: relative;
+  border-left: black solid 1px;
+  height: 100px;
+
+  left: 120px;
+}
