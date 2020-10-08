@@ -1,24 +1,25 @@
-import React, { Component } from "react";
-import "./Time.css"
+import React, { useState } from "react";
+import "./Time.css";
 
-class Time extends Component {
-  constructor() {
-    super();
-    this.state = {
-      time: new Date(),
-    };
-  }
+function Time() {
+  const [time, setTime] = useState(new Date());
 
-  handleChange() {
+  const handleChange = () => {
     setInterval(() => {
-      this.setState({ time: new Date() });
+      setTime(new Date());
     }, 1000);
-  }
-  render() {
-    return (
-      <div>
+  };
+  return (
+    <div>
+      <video
+        src={require("../Videos&Pictures/rain.mp4")}
+        //autoPlay
+        //muted
+        //loop
+      ></video>
+      <div className="time-wrapper">
         <h1 className="time">
-          {this.state.time.toLocaleTimeString([], {
+          {time.toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
             hour12: false,
@@ -30,11 +31,12 @@ class Time extends Component {
           <div className="border-nmb3"></div>
           <div className="border-nmb4"></div>
           <div className="border-nmb5"></div>
+          <div className="border-nmb6"></div>
         </div>
-        {this.handleChange()}
       </div>
-    );
-  }
+      {handleChange()}
+    </div>
+  );
 }
 
 export default Time;

@@ -1,15 +1,25 @@
-.rain-video {
-    z-index: -1;
-    position: relative;
+video {
+  z-index: -100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  
 }
 
 .time {
   position: relative;
-  color: black;
+  color: white;
   font-family: "Open Sans", sans-serif;
   font-size: 200px;
-  font-weight: 100 ;
-  left: 200px;
+  font-weight: 100;
+  left: 190px;
   top: 200px;
   width: 200px;
 }
@@ -20,40 +30,56 @@
 }
 
 .border-nmb1 {
-  border-left: black solid 1px;
+  border-left: white solid 1px;
   position: relative;
-  height: 100px;
-  left: 200px;
+  height: 141px;
+  top: 71px;
+  left: 150px;
 }
 
 .border-nmb2 {
   position: relative;
-  border-left: black solid 1px;
+  border-bottom: white solid 1px;
   height: 100px;
-
-  left: 180px;
+  width: 30px;
+  left: 150px;
+  bottom: 170px;
 }
 
 .border-nmb3 {
   position: relative;
-  border-left: black solid 1px;
+  border-bottom: white solid 1px;
   height: 100px;
-
-  left: 160px;
+  bottom: 130px;
+  left: 150px;
+  width: 200px;
 }
 
 .border-nmb4 {
   position: relative;
-  border-left: black solid 1px;
-  height: 100px;
-
-  left: 140px;
+  border-bottom: white solid 1px;
+  width: 200px;
+  left: 550px;
+  bottom: 130px;
 }
 
 .border-nmb5 {
+  border-left: white solid 1px;
   position: relative;
-  border-left: black solid 1px;
-  height: 100px;
+  height: 140px;
+  bottom: 270px;
+  left: 750px;
+}
 
-  left: 120px;
+.border-nmb6 {
+  position: relative;
+  border-bottom: white solid 1px;
+  height: 100px;
+  width: 30px;
+  left: 720px;
+  bottom: 510px;
+}
+
+.time-wrapper { 
+  position: relative;
 }

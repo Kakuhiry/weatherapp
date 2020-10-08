@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 const api = {
   key: "e27e425e63f5eb8e9af7aec940b18eea",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -9,15 +9,9 @@ const cords = {
   lon: "",
 };
 
-export default class Weather extends Component {
-  constructor() {
-    super();
-    this.state = {
-      weatherStatus: [],
-    };
-  }
-
-  componentDidMount() {
+function Weather() {
+  const [weatherStatus, setWeatherStatus] = useState(null);
+  const ApiCall = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
       cords.lon = position.coords.longitude;
@@ -28,29 +22,18 @@ export default class Weather extends Component {
         `${api.base}weather?lat=${cords.lat}&lon=${cords.lon}&APPID=${api.key}`
       )
         .then((res) => res.json())
-        .then((json) =>
-          this.setState({ weatherStatus: json }, () =>
-            console.log(this.state.weatherStatus)
-          )
-        );
+        .then((json) => setWeatherStatus(json))
+        .then(console.log(weatherStatus));
     });
-  }
+    ApiCall();
 
-  render() {
-    console.log();
-    const data = Array.from(this.state.weatherStatus)
-    console.log(data)
-    return (
-      <div>
-        <div>
-          <h1>{} {}</h1>
-        </div>
-        <h1>
-          {() => this.state.weatherStatus.map((item, key) => {
-            return <h1>{item.weather}</h1>
-          })}
-        </h1>
-      </div>
-    );
-  }
+    console.log("Hello world");
+  };
+  return (
+    <div>{ApiCall()}
+      <div>{console.log(weatherStatus)}</div>
+    </div>
+  );
 }
+
+export default Weather;
