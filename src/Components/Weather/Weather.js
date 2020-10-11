@@ -30,7 +30,7 @@ function Weather() {
     console.log("Hello world");
   };
   return (
-    <div>{ApiCall()}
+    <div>
       <div>{console.log(weatherStatus)}</div>
     </div>
   );
