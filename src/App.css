@@ -1,6 +1,6 @@
 .dark-mode {
   filter: invert(100%);
-  background-color: black;
+  background-color: white;
 }
 
 .yellow-mode {
@@ -15,4 +15,11 @@
 *{
 
   margin: 0;
+
 }
+
+html {
+
+  overflow: hidden;
+}
+

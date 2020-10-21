@@ -1,0 +1,90 @@
+
+
+.content-box-clouds {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+    left: 1280px;
+    top: 230px;
+}
+
+
+.border-nmb1-weather{
+    position: absolute;
+    left: 1180px;
+    top: 370px;
+    z-index: 99;
+    border-bottom: 1px rgb(109, 109, 109) solid;
+    width: 400px;
+}
+
+.location {
+    position: absolute;
+    top: 269px;
+    left: 380px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+.wind-icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+    right: 200px;
+    bottom: 16px;
+}
+
+.wind-speed {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+    top: 400px;
+    left: 1250px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.sunrise-icon {
+    width: 30px;
+    
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: 200;
+    opacity: 0.7;
+    left: 100px;
+    bottom: 33px;
+}
+
+.sunset-icon {
+    width: 35px;
+    
+    height: 35px;
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: 200;
+    left: 225px;
+    bottom: 33px;
+}
+
+.sunrise-time{
+    position: absolute;
+    left: 140px;
+    bottom: 34px;
+}
+
+.sunset-time{
+    position: absolute;
+    left: 265px;
+    bottom: 34px;
+}
+
+.weather-information {
+    position: absolute;
+    left: -8px
+}

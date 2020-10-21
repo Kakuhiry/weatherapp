@@ -1,37 +1,65 @@
 import React, { useState, useEffect } from "react";
-const api = {
-  key: "e27e425e63f5eb8e9af7aec940b18eea",
-  base: "https://api.openweathermap.org/data/2.5/",
-};
+import "./Weather.css";
 
-const cords = {
-  lat: "",
-  lon: "",
-};
-
-function Weather() {
+function Weather(props) {
   const [weatherStatus, setWeatherStatus] = useState(null);
-  const ApiCall = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      cords.lat = position.coords.latitude;
-      cords.lon = position.coords.longitude;
-      console.log("Latitude is: ", cords.lat);
-      console.log("Longitude is: ", cords.lon);
+  useEffect(() => {
+    setWeatherStatus(props.apiResult);
+    console.log(weatherStatus);
+  }, [props.apiResult, weatherStatus]);
+  console.log();
+  const statusTemp = weatherStatus?.main.temp;
+  const temperature = statusTemp?.toString()[0] + statusTemp?.toString()[1];
+  const place = weatherStatus?.name;
+  const windSpeed = weatherStatus?.wind.speed;
 
-      fetch(
-        `${api.base}weather?lat=${cords.lat}&lon=${cords.lon}&APPID=${api.key}`
-      )
-        .then((res) => res.json())
-        .then((json) => setWeatherStatus(json))
-        .then(console.log(weatherStatus));
-    });
-    ApiCall();
+  const sunrise = weatherStatus?.sys.sunrise * 1000;
+  const sunriseHour = new Date(sunrise);
 
-    console.log("Hello world");
-  };
+  const sunset = weatherStatus?.sys.sunset * 1000;
+  const sunsetHour = new Date(sunset);
+
   return (
-    <div>{ApiCall()}
-      <div>{console.log(weatherStatus)}</div>
+    <div>
+      <div className="weather-content-box">
+        <h1 className="content-box-clouds">{temperature}°C</h1>
+        <div className="border-nmb1-weather"></div>
+        <div className="location">{place}</div>
+        <div className="weather-information">
+          <div className="wind-speed">
+            {windSpeed} m/s
+            <img
+              className="wind-icon"
+              src={require("../../Pictures&Videos/—Pngtree—vector wind icon_4239293.png")}
+              alt=""
+            />
+            <div className="sunrise-time">
+              {sunriseHour.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })}
+            </div>
+            <img
+              className="sunrise-icon"
+              src={require("../../Pictures&Videos/1582852.png")}
+              alt=""
+            />
+            <div className="sunset-time">
+              {sunsetHour.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })}
+            </div>
+            <img
+              className="sunset-icon"
+              src={require("../../Pictures&Videos/sunset.png")}
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

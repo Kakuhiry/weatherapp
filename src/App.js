@@ -1,17 +1,15 @@
-import React, {} from 'react';
-import './App.css';
-import TimeComponent from './Components/Time/Time.js';
-import WeatherComponent from './Components/Weather/Weather.js';
-
-
+import React from "react";
+import "./App.css";
+import TimeComponent from "./Components/Time/Time.js";
+import WeatherManager from "./Components/WeatherAndPicManagement.js"
 
 const App = () => {
   return (
-    <div>
+    <div className="appJS">
+      <WeatherManager />
       <TimeComponent />
-      <WeatherComponent />
     </div>
   );
-}
+};
 
 export default App;

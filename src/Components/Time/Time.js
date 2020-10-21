@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Time.css";
 
+
+
 function Time() {
   const [time, setTime] = useState(new Date());
-
+  var weatherManager = require("../WeatherAndPicManagement.js")
   const handleChange = () => {
     setInterval(() => {
       setTime(new Date());
@@ -11,12 +13,7 @@ function Time() {
   };
   return (
     <div>
-      <video
-        src={require("../Videos&Pictures/rain.mp4")}
-        //autoPlay
-        //muted
-        //loop
-      ></video>
+      <img className= "background-img" src={require(`../../Pictures&Videos/${weatherManager.photo}`)} alt="no"/>
       <div className="time-wrapper">
         <h1 className="time">
           {time.toLocaleTimeString([], {
@@ -38,5 +35,6 @@ function Time() {
     </div>
   );
 }
+
 
 export default Time;
