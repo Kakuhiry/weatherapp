@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import WeatherComponent from "./Weather/Weather.js";
-export const photo = "photo-1470217957101-da7150b9b681.jpeg";
 
 const api = {
   key: "e27e425e63f5eb8e9af7aec940b18eea",
@@ -13,7 +12,42 @@ const cords = {
 };
 
 export default function WeatherAndPicManagement() {
+  var photo = "photo-1475738972911-5b44ce984c42.jpeg";
   const [apiResponse, setApiResponse] = useState(null);
+
+  //Right now date
+
+  var dates = new Date();
+  console.log(
+    dates
+      .toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      })
+      .toString()
+  );
+
+  //Sunset date given by API
+  const sunset = apiResponse?.sunset * 1000;
+  const sunsetHour = new Date(sunset);
+
+  if (
+    dates.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }) <= sunsetHour.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    })
+  ) {
+    photo = "drew-hays-_Vq7JTlS4XE-unsplash.jpg";
+  } else {
+    photo = "ws_Sunny_Clouds_1920x1080.jpg"
+  }
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
@@ -26,13 +60,11 @@ export default function WeatherAndPicManagement() {
         .then((res) => res.json())
         .then((json) => setApiResponse(json))
         .then(console.log());
-      
     });
-
   }, []);
   return (
     <div>
-      <WeatherComponent apiResult={apiResponse} />
+      <WeatherComponent apiResult={apiResponse} bgPhoto={photo} />
     </div>
   );
 }

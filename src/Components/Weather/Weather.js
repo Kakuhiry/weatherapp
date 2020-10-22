@@ -7,7 +7,9 @@ function Weather(props) {
     setWeatherStatus(props.apiResult);
     console.log(weatherStatus);
   }, [props.apiResult, weatherStatus]);
-  console.log();
+
+  //Giving format to the data given by the API
+
   const statusTemp = weatherStatus?.main.temp;
   const temperature = statusTemp?.toString()[0] + statusTemp?.toString()[1];
   const place = weatherStatus?.name;
@@ -18,14 +20,15 @@ function Weather(props) {
 
   const sunset = weatherStatus?.sys.sunset * 1000;
   const sunsetHour = new Date(sunset);
-//changesdfsdf
+  //change
   return (
     <div>
+    <img className= "background-img" src={require(`../../Pictures&Videos/${props.bgPhoto}`)} alt="no"/>
       <div className="weather-content-box">
-        <h1 className="content-box-clouds">{temperature}°C</h1>
-        <div className="border-nmb1-weather"></div>
-        <div className="location">{place}</div>
         <div className="weather-information">
+          <h1 className="content-box-clouds">{temperature}°C</h1>
+          <div className="border-nmb1-weather"></div>
+          <div className="location">{place}</div>
           <div className="wind-speed">
             {windSpeed} m/s
             <img

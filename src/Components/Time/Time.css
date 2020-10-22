@@ -94,3 +94,8 @@ img {
   bottom: 1200px;
   height: 0px;
 }
+
+.dark-mode .time-wrapper { 
+  filter: invert(100%);
+  
+}

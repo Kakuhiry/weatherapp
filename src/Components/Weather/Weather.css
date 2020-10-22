@@ -1,4 +1,8 @@
 
+.background-img {
+    z-index: -1;
+}
+
 
 .content-box-clouds {
     position: absolute;
@@ -15,13 +19,14 @@
     left: 1180px;
     top: 370px;
     z-index: 99;
-    border-bottom: 1px rgb(109, 109, 109) solid;
+    border-bottom: 1px rgb(0, 0, 0) solid;
     width: 400px;
 }
 
 .location {
+    width: 200px;
     position: absolute;
-    top: 269px;
+    top: 266px;
     left: 380px;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
@@ -72,6 +77,8 @@
     bottom: 33px;
 }
 
+
+
 .sunrise-time{
     position: absolute;
     left: 140px;
@@ -85,6 +92,13 @@
 }
 
 .weather-information {
-    position: absolute;
     left: -8px
+}
+
+/*Dark mode*/
+
+.dark-mode .weather-information {
+    filter: invert(100%);
+    position: relative;
+    bottom: 995px;
 }

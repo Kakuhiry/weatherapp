@@ -1,7 +1,4 @@
-.dark-mode {
-  filter: invert(100%);
-  background-color: white;
-}
+
 
 .yellow-mode {
   transition-duration: 0.5s;

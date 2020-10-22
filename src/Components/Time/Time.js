@@ -5,7 +5,6 @@ import "./Time.css";
 
 function Time() {
   const [time, setTime] = useState(new Date());
-  var weatherManager = require("../WeatherAndPicManagement.js")
   const handleChange = () => {
     setInterval(() => {
       setTime(new Date());
@@ -13,7 +12,6 @@ function Time() {
   };
   return (
     <div>
-      <img className= "background-img" src={require(`../../Pictures&Videos/${weatherManager.photo}`)} alt="no"/>
       <div className="time-wrapper">
         <h1 className="time">
           {time.toLocaleTimeString([], {
