@@ -19,7 +19,7 @@
     left: 1180px;
     top: 370px;
     z-index: 99;
-    border-bottom: 1px rgb(0, 0, 0) solid;
+    border-bottom: 1px solid;
     width: 400px;
 }
 
@@ -67,7 +67,6 @@
 
 .sunset-icon {
     width: 35px;
-    
     height: 35px;
     position: absolute;
     z-index: 99;
@@ -91,14 +90,50 @@
     bottom: 34px;
 }
 
-.weather-information {
-    left: -8px
-}
 
 /*Dark mode*/
 
-.dark-mode .weather-information {
+.weather-information {
+    color: black;
+}
+
+.weather-information-dark {
+    color: white;
+}
+
+.sunrise-icon-dark {
+    width: 30px;
+    
+    height: 30px;
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: 200;
+    opacity: 0.7;
+    left: 100px;
+    bottom: 33px;
     filter: invert(100%);
-    position: relative;
-    bottom: 995px;
+}
+
+.sunset-icon-dark {
+    width: 35px;
+    
+    height: 35px;
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: 200;
+    left: 225px;
+    bottom: 33px;
+    filter: invert(100%);
+}
+
+.wind-icon-dark {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+    right: 200px;
+    bottom: 16px;
+    filter: invert(100%);
 }

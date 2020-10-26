@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WeatherComponent from "./Weather/Weather.js";
+import TimeComponent from "./Time/Time.js"
 
 const api = {
   key: "e27e425e63f5eb8e9af7aec940b18eea",
@@ -11,24 +12,14 @@ const cords = {
   lon: "",
 };
 
+
 export default function WeatherAndPicManagement() {
   var photo = "photo-1475738972911-5b44ce984c42.jpeg";
   const [apiResponse, setApiResponse] = useState(null);
 
   //Right now date
-
   var dates = new Date();
-  console.log(
-    dates
-      .toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      })
-      .toString()
-  );
-
-  //Sunset date given by API
+//Sunset date given by API
   const sunset = apiResponse?.sunset * 1000;
   const sunsetHour = new Date(sunset);
 
@@ -37,15 +28,17 @@ export default function WeatherAndPicManagement() {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
-    }) <= sunsetHour.toLocaleTimeString([], {
+    }) >=
+    sunsetHour.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
     })
   ) {
-    photo = "drew-hays-_Vq7JTlS4XE-unsplash.jpg";
+    photo = "photo-1518818419601-72c8673f5852.jpeg";
+  
   } else {
-    photo = "ws_Sunny_Clouds_1920x1080.jpg"
+    photo = "ws_Sunny_Clouds_1920x1080.jpg";
   }
 
   useEffect(() => {
@@ -65,6 +58,9 @@ export default function WeatherAndPicManagement() {
   return (
     <div>
       <WeatherComponent apiResult={apiResponse} bgPhoto={photo} />
+      <TimeComponent apiResult = {apiResponse} />
     </div>
   );
 }
+
+

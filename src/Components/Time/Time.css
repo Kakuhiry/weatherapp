@@ -24,7 +24,6 @@ img {
 
 .time {
   position: relative;
-  color: black;
   font-family: "Open Sans", sans-serif;
   font-size: 200px;
   font-weight: 100;
@@ -39,7 +38,7 @@ img {
 }
 
 .border-nmb1 {
-  border-left: black solid 1px;
+  border-left:  solid 1px;
   position: relative;
   height: 141px;
   top: 71px;
@@ -48,7 +47,7 @@ img {
 
 .border-nmb2 {
   position: relative;
-  border-bottom: black solid 1px;
+  border-bottom:  solid 1px;
   height: 100px;
   width: 30px;
   left: 150px;
@@ -57,7 +56,7 @@ img {
 
 .border-nmb3 {
   position: relative;
-  border-bottom: black solid 1px;
+  border-bottom:  solid 1px;
   height: 100px;
   bottom: 130px;
   left: 150px;
@@ -66,14 +65,14 @@ img {
 
 .border-nmb4 {
   position: relative;
-  border-bottom: black solid 1px;
+  border-bottom:  solid 1px;
   width: 200px;
   left: 550px;
   bottom: 130px;
 }
 
 .border-nmb5 {
-  border-left: black solid 1px;
+  border-left: solid 1px;
   position: relative;
   height: 140px;
   bottom: 270px;
@@ -82,7 +81,7 @@ img {
 
 .border-nmb6 {
   position: relative;
-  border-bottom: black solid 1px;
+  border-bottom: solid 1px;
   height: 100px;
   width: 30px;
   left: 720px;
@@ -95,7 +94,9 @@ img {
   height: 0px;
 }
 
-.dark-mode .time-wrapper { 
-  filter: invert(100%);
-  
+.time-wrapper-dark{
+  position: relative;
+  bottom: 1200px;
+  height: 0px;
+  color: white;
 }
