@@ -52,7 +52,7 @@ function Weather(props) {
             {windSpeed} m/s
             <img
               className="wind-icon"
-              src={require("../../Pictures&Videos/—Pngtree—vector wind icon_4239293.png")}
+              src={require("../../Pictures&Videos/wind-speed-icon.png")}
               alt=""
             />
             <div className="sunrise-time">
@@ -64,7 +64,7 @@ function Weather(props) {
             </div>
             <img
               className={ currentDate >= sunsetTime ? "sunrise-icon-dark": "sunrise-icon"}
-              src={require("../../Pictures&Videos/1582852.png")}
+              src={require("../../Pictures&Videos/sunrise-icon.png")}
               alt=""
             />
             <div className="sunset-time">
@@ -76,7 +76,7 @@ function Weather(props) {
             </div>
             <img
               className={ currentDate >= sunsetTime ? "sunset-icon-dark": "sunset-icon"}
-              src={require("../../Pictures&Videos/sunset.png")}
+              src={require("../../Pictures&Videos/sunset-icon.png")}
               alt=""
             />
           </div>

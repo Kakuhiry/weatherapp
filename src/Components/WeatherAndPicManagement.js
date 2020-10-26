@@ -35,18 +35,17 @@ export default function WeatherAndPicManagement() {
       hour12: false,
     })
   ) {
-    photo = "photo-1518818419601-72c8673f5852.jpeg";
+    photo = "Night-sky-clean.jpg";
   
   } else {
-    photo = "ws_Sunny_Clouds_1920x1080.jpg";
+    photo = "Evening-Sunny.jpg";
   }
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
       cords.lon = position.coords.longitude;
-      console.log("Latitude is: ", cords.lat);
-      console.log("Longitude is: ", cords.lon);
+      
       fetch(
         `${api.base}weather?lat=${cords.lat}&lon=${cords.lon}&units=metric&APPID=${api.key}`
       )
