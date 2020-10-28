@@ -11,6 +11,7 @@
     font-size: 100px;
     left: 1280px;
     top: 230px;
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
 }
 
 
@@ -88,6 +89,7 @@
     position: absolute;
     left: 265px;
     bottom: 34px;
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
 }
 
 
@@ -95,15 +97,17 @@
 
 .weather-information {
     color: black;
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
 }
 
 .weather-information-dark {
     color: white;
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
 }
 
 .sunrise-icon-dark {
     width: 30px;
-    
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
     height: 30px;
     position: absolute;
     z-index: 99;
@@ -117,7 +121,7 @@
 
 .sunset-icon-dark {
     width: 35px;
-    
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
     height: 35px;
     position: absolute;
     z-index: 99;
@@ -129,6 +133,7 @@
 }
 
 .wind-icon-dark {
+    text-shadow: 0px 3px 10px rgba(124, 126, 129, 1);
     width: 60px;
     height: 60px;
     position: absolute;
