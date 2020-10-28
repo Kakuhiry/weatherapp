@@ -101,3 +101,9 @@ img {
   height: 0px;
   color: white;
 }
+
+.panel {
+  position: relative;
+  left: 212px;
+  bottom: 400px;
+}

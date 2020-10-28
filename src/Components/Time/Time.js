@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
+import FrostPanel from "../frost-panel/frostPanel";
 import "./Time.css";
 
-
-
 function Time(props) {
-
   const [weatherState, setWeatherState] = useState(null);
   const [time, setTime] = useState(new Date());
 
@@ -12,33 +10,35 @@ function Time(props) {
     setWeatherState(props.apiResult);
     console.log(weatherState);
   }, [props.apiResult, weatherState]);
-
   const handleChange = () => {
     setInterval(() => {
       setTime(new Date());
-    }, 1000);
+      clearInterval(handleChange())
+    }, 60000);
   };
 
   const sunset = weatherState?.sys.sunset * 1000;
   const sunsetHour = new Date(sunset);
 
-
   const localTime = time.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
-  })
-
+  });
 
   const sunsetTime = sunsetHour.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
-  })
+  });
 
   return (
     <div>
-      <div className={localTime >= sunsetTime ? "time-wrapper-dark" : "time-wrapper"}>
+      <div
+        className={
+          localTime >= sunsetTime ? "time-wrapper-dark" : "time-wrapper"
+        }
+      >
         <h1 className="time">
           {time.toLocaleTimeString([], {
             hour: "2-digit",
@@ -55,10 +55,12 @@ function Time(props) {
           <div className="border-nmb6"></div>
         </div>
       </div>
-      {handleChange()}
+      <div className= "panel">
+        <FrostPanel />
+        {handleChange()}
+      </div>
     </div>
   );
 }
-
 
 export default Time;

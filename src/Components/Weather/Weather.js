@@ -52,7 +52,7 @@ function Weather(props) {
             {windSpeed} m/s
             <img
               className="wind-icon"
-              src={require("../../Pictures&Videos/wind-speed-icon.png")}
+              src={require("../../Pictures&Videos/wind.png")}
               alt=""
             />
             <div className="sunrise-time">

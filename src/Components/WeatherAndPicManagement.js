@@ -41,17 +41,6 @@ export default function WeatherAndPicManagement() {
     photo = "sol_esquina_solo.png";
   }
 
-  console.log(sunsetHour.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }))
-
-  console.log(dates.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }))
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
