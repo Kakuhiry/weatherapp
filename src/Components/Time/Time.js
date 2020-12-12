@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import FrostPanel from "../frost-panel/frostPanel";
+import Clock from "react-live-clock";
 import "./Time.css";
 
 function Time(props) {
   const [weatherState, setWeatherState] = useState(null);
-  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     setWeatherState(props.apiResult);
-    console.log(weatherState);
+    // console.log(weatherState);
+    // console.log(props.timezone)
   }, [props.apiResult, weatherState]);
-  const handleChange = () => {
-    setInterval(() => {
-      setTime(new Date());
-      clearInterval(handleChange())
-    }, 60000);
-  };
+  
 
   const sunset = weatherState?.sys.sunset * 1000;
   const sunsetHour = new Date(sunset);
+
+  const time = new Date()
 
   const localTime = time.toLocaleTimeString([], {
     hour: "2-digit",
@@ -32,6 +30,8 @@ function Time(props) {
     hour12: false,
   });
 
+  
+
   return (
     <div>
       <div
@@ -40,12 +40,14 @@ function Time(props) {
         }
       >
         <h1 className="time">
-          {time.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          })}
+          <Clock
+            className="time"
+            format={"HH:mm"}
+            ticking={true}
+            timezone={props.timezone?._z?.name}
+          />
         </h1>
+
         <div className="borders">
           <div className="border-nmb1"></div>
           <div className="border-nmb2"></div>
@@ -55,9 +57,9 @@ function Time(props) {
           <div className="border-nmb6"></div>
         </div>
       </div>
-      <div className= "panel">
+      <div className="panel">
         <FrostPanel />
-        {handleChange()}
+     
       </div>
     </div>
   );

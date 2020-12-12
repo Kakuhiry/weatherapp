@@ -16,6 +16,7 @@ const cords = {
 export default function WeatherAndPicManagement() {
   var photo = "photo-1475738972911-5b44ce984c42.jpeg";
   const [apiResponse, setApiResponse] = useState(null);
+  const [timeZone, setTimeZone] = useState('')
 
   //Right now date
   var dates = new Date();
@@ -41,23 +42,32 @@ export default function WeatherAndPicManagement() {
     photo = "sol_esquina_solo.png";
   }
 
+  const StablishTimeZone = (longitude, latitude) => {
+    var ts = require('@mapbox/timespace');
+    var timestamp = Date.now();
+    var point = [longitude, latitude];
+    var time = ts.getFuzzyLocalTimeFromPoint(timestamp, point)
+    setTimeZone(time)
+  }
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
       cords.lon = position.coords.longitude;
       
+      StablishTimeZone(cords.lon, cords.lat);
       fetch(
         `${api.base}weather?lat=${cords.lat}&lon=${cords.lon}&units=metric&APPID=${api.key}`
       )
         .then((res) => res.json())
         .then((json) => setApiResponse(json))
-        .then(console.log());
+        // .then(console.log());
     });
-  }, []);
+  }, [timeZone, apiResponse]);
   return (
     <div>
-      <WeatherComponent apiResult={apiResponse} bgPhoto={photo} />
-      <TimeComponent apiResult = {apiResponse} />
+      <WeatherComponent apiResult={apiResponse} bgPhoto={photo}  />
+      <TimeComponent apiResult = {apiResponse} timezone= {timeZone} />
     </div>
   );
 }
