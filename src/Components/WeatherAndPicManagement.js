@@ -42,6 +42,7 @@ export default function WeatherAndPicManagement() {
     photo = "sol_esquina_solo.png";
   }
 
+
   const StablishTimeZone = (longitude, latitude) => {
     var ts = require('@mapbox/timespace');
     var timestamp = Date.now();
@@ -50,20 +51,26 @@ export default function WeatherAndPicManagement() {
     setTimeZone(time)
   }
 
+  const getDataFromApi = (longitude, latitude) => {
+    fetch(
+      `${api.base}weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api.key}`
+    )
+      .then((res) => res.json())
+      .then((json) => setApiResponse(json))
+      // .then(console.log());
+  }
+
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       cords.lat = position.coords.latitude;
       cords.lon = position.coords.longitude;
       
       StablishTimeZone(cords.lon, cords.lat);
-      fetch(
-        `${api.base}weather?lat=${cords.lat}&lon=${cords.lon}&units=metric&APPID=${api.key}`
-      )
-        .then((res) => res.json())
-        .then((json) => setApiResponse(json))
-        // .then(console.log());
+      getDataFromApi(cords.lon, cords.lat)
     });
-  }, [timeZone, apiResponse]);
+  }, []);
+
   return (
     <div>
       <WeatherComponent apiResult={apiResponse} bgPhoto={photo}  />
