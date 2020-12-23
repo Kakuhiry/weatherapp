@@ -14,6 +14,7 @@ function Time(props) {
   
 
   const sunset = weatherState?.sys.sunset * 1000;
+  const place = weatherState?.name;
   const sunsetHour = new Date(sunset);
 
   const time = new Date()
@@ -53,6 +54,7 @@ function Time(props) {
           <div className="border-nmb1"></div>
           <div className="border-nmb2"></div>
           <div className="border-nmb3"></div>
+          <div className="location">{place}</div>
           <div className="border-nmb4"></div>
           <div className="border-nmb5"></div>
           <div className="border-nmb6"></div>

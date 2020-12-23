@@ -15,8 +15,7 @@ video {
 }
 
 img {
-  width: 1920px;
-  height: 990px;
+  
   z-index: -1;
   position: relative;
 }
@@ -90,9 +89,8 @@ img {
 }
 
 .time-wrapper {
-  right: 2px; 
-  position: relative;
-  bottom: 1200px;
+  position: absolute;
+  top: -22%;
   height: 0px;
 }
 

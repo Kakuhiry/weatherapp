@@ -12,7 +12,7 @@ function Weather(props) {
 
   const statusTemp = weatherStatus?.main.temp;
   const temperature = statusTemp?.toString()[0] + statusTemp?.toString()[1];
-  const place = weatherStatus?.name;
+
   const windSpeed = weatherStatus?.wind.speed;
 
   const sunrise = weatherStatus?.sys.sunrise * 1000;
@@ -52,7 +52,6 @@ function Weather(props) {
         >
           <h1 className="content-box-clouds">{temperature}°C</h1>
           <div className="border-nmb1-weather"></div>
-          <div className="location">{place}</div>
           <div className="weather-info-wrapper">
             <div className="wind-speed">
               {windSpeed} m/s
@@ -61,6 +60,8 @@ function Weather(props) {
                 src={require("../../Pictures&Videos/wind.png").default}
                 alt=""
               />
+            </div>
+            <div className="sunrise-info">
               <div className="sunrise-time">
                 {sunriseHour.toLocaleTimeString([], {
                   hour: "2-digit",
@@ -77,21 +78,22 @@ function Weather(props) {
                 src={require("../../Pictures&Videos/sunrise-icon.png").default}
                 alt=""
               />
-              <div className="sunset-time">
-                {sunsetHour.toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })}
-              </div>
-              <img
-                className={
-                  currentDate >= sunsetTime ? "sunset-icon-dark" : "sunset-icon"
-                }
-                src={require("../../Pictures&Videos/sunset-icon.png").default}
-                alt=""
-              />
             </div>
+
+            <div className="sunset-time">
+              {sunsetHour.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })}
+            </div>
+            <img
+              className={
+                currentDate >= sunsetTime ? "sunset-icon-dark" : "sunset-icon"
+              }
+              src={require("../../Pictures&Videos/sunset-icon.png").default}
+              alt=""
+            />
           </div>
         </div>
       </div>
