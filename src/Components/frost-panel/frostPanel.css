@@ -10,7 +10,7 @@ body {
 
 .container {
     width: 30rem;
-    height: 20rem;
+    height: 26rem;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);   
     border-radius: 5px;
     position: relative;
@@ -31,4 +31,94 @@ body {
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
     filter: blur(10px);
     margin: -20px;
+}
+
+.water-drop-icon {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    padding-top: .5%;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+.humidity {
+    height: 10%;
+    margin: 10% 30% 5%;
+    width: 200px;
+    display: flex;
+
+}
+
+.humidity-dark {
+    height: 10%;
+    margin: 10% 30% 5%;
+    width: 200px;
+    display: flex;
+    filter: invert(100%);
+}
+
+.humidity-text {
+    opacity: 0.8;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 4.2% 20%;
+}
+
+
+
+
+
+
+.pressure {
+    height: 10%;
+    margin: 10% 30% 5%;
+    width: 220px;
+    display: flex;
+    
+}
+
+.pressure-dark {
+    height: 10%;
+    margin: 10% 30% 5%;
+    width: 220px;
+    display: flex;
+    filter: invert(100%)
+}
+
+.pressure-icon {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    padding-top: .5%;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+
+
+.pressure-text {
+    opacity: 0.8;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 4.2% 20%;
+}
+
+.separator {
+    position: absolute;
+    z-index: 99;
+    border-bottom: 1px solid;
+    width: 400px;
+    margin-left: 9%;
+    opacity: 0.1;
+}
+
+.separator-dark {
+    position: absolute;
+    z-index: 99;
+    border-bottom: 1px solid;
+    width: 400px;
+    margin-left: 9%;
+    opacity: 0.1;
+    filter: invert(100%)
 }

@@ -90,20 +90,21 @@ img {
 
 .time-wrapper {
   position: absolute;
-  top: -22%;
+  top: -18%;
+  left: 1%;
   height: 0px;
 }
 
 .time-wrapper-dark{
-  right: 2px;
-  position: relative;
-  bottom: 1200px;
+  position: absolute;
+  top: -18%;
+  left: 1%;
   height: 0px;
   color: white;
 }
 
 .panel {
-  position: relative;
-  left: 212px;
-  bottom: 400px;
+  position: absolute;
+  left: 12%;
+  bottom: 10%;
 }

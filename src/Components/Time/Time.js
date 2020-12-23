@@ -61,7 +61,7 @@ function Time(props) {
         </div>
       </div>
       <div className="panel">
-        <FrostPanel />
+        <FrostPanel humidity= {weatherState?.main.humidity} pressure= {weatherState?.main.pressure} sunsetAndSunrise = {[weatherState?.sys.sunset, weatherState?.sys.sunrise]}/>
      
       </div>
     </div>
